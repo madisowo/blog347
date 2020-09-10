@@ -8,12 +8,20 @@
 
     #root {
         font-size: 2em;
+        font-family: sans-serif;
         background-color: white;
         width: 960px;
         min-height: 100vh;
         margin: 0 auto;
+        padding: 10px;
         box-shadow: 0 0 20px gray;
         box-sizing: border-box;
+    }
+
+    h1 {
+        border-bottom: 5px solid rgb(207, 26, 26);
+        padding-bottom: 14px;
+        font-family: 'Acme', sans-serif;
     }
 </style>
 <head>
@@ -22,10 +30,21 @@
 
 <body>
     <div id="root">
-        <h1>Will Madison's 347 Blog</h1>
+        <h1>
+            <center>
+                <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+                Will Madison's 347 Blog
+            </center>
+        </h1>
         <h2>Table of Contents:</h1>
         <ul>
-            <li>Blog 1</li>
+            <li style="text-decoration: underline;" <a href="blog1.html">Blog 1</a></li>
+        </ul>
+        <ul>
+            <li style="text-decoration: underline;" >Blog 2 (coming soon)</li>
+        </ul>
+        <ul>
+            <li style="text-decoration: underline;" >Blog 3 (coming soon)</li>
         </ul>
     </div>
 </body>
