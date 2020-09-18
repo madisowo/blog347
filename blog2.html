@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    h2 {
+        display: flex;
+        flex-direction: row;
+        flex-grow: 0;
+        align-content: space-between;
+    }
+
+    #title {
+        flex-grow: 2;
+    }
+
+    #date {
+        flex-grow: 1;
+    }
+
+    body {
+        background-color: rgb(180, 255, 255);
+        margin: 0;
+    }
+
+    #root {
+        font-size: 2em;
+        font-family: sans-serif;
+        background-color: white;
+        width: 960px;
+        min-height: 100vh;
+        margin: 0 auto;
+        padding: 10px;
+        box-shadow: 0 0 20px gray;
+        box-sizing: border-box;
+    }
+
+    h1 {
+        border-top: 5px solid rgb(207, 26, 26);
+        border-bottom: 5px solid rgb(207, 26, 26);
+        padding-bottom: 15px;
+        padding-top: 15px;
+        font-family: 'Acme', sans-serif;
+        ;
+    }
+
+    p {
+        font-family: 'Times New Roman', Times, serif;
+        margin: 15px;
+    }
+
+    p1 {
+        display: block;
+        padding: 15px;
+        text-align: center;
+        font-size: .8em;
+    }
+
+    form {
+        padding: 10px;
+    }
+
+    footer {
+        text-align: center;
+        font-size: 16px;
+        bottom: 0px;
+        padding: 5px;
+    }
+
+    xmp {
+        font-size: 16px;
+    }
+
+    #foot {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+</style>
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+    <title> 347 Blog 2</title>
+</head>
+
+<body>
+    <div id="root">
+        <h1>
+            <center>
+                Blog 1
+            </center>
+        </h1>
+        <h2>
+            <div id="title">Light and Dark Themes</div>
+            <div id="date">9/18/20</div>
+        </h2>
+        <p>
+            Designing a website is crucial to many business' success. This brings about a hot discussion topic: Light
+            mode vs Dark mode. <a
+                href="https://getpolarized.io/2019/11/25/Dark-Mode-Should-Be-The-Default-With-95-Percent-Preferring-it-Over-Light-Mode.html"
+                target="_blank">Some studies </a> have collected data that resulting in as much as 95% of people
+            preferering dark mode over light mode. I am one of
+            the 5%.
+        </p>
+        <p>
+            I was not always this way. In high school, I took two years of graphic design. One of the things I learned
+            is how the readability of white font on a dark background is not as good as black text on a light
+            background. Ever since I learned that, I have been unable to read more than a few words in dark mode. If I
+            read any more than that, I get a similar effect to when you look at a light or the sun and have a dark spot
+            in your vision. It is just like that but with multiple lines of sun spots. While I do have a color inverter
+            extension, not all websites play nicely with this and it doens't always work well.
+        </p>
+        <p>
+            The <a
+                href="https://www.phonearena.com/news/Dark-Mode-iPhone-Android-interface-feature-pros-cons-versus-light-mode_id116978"
+                target="_blank">following image is from article</a> that talks about the difficulties of dark themes. It
+            describes the white text on the black background to appear to have "halos" around the text, hurting
+            readability.
+        </p>
+        <img src="https://i-cdn.phonearena.com/images/articles/346704-thumb/halation.jpg">
+        <p>
+            Knowing this information leads to a valuable question about web development. What do you do? do you anger
+            the masses or hurt the few? Many websites have already adopted toggle options to switch between light and
+            dark modes. <a href="https://www.w3schools.com/howto/howto_js_toggle_dark_mode.asp" target="_blank">This
+                website</a> provides a great intro to switching themes with CSS and Javascript. An example of the code
+            in action can be <a href="darklight.html">found here.</a>
+        </p>
+
+
+        <h5>Code:</h5>
+        <xmp>
+            <!DOCTYPE html>
+            <html>
+
+            <head>
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <style>
+                    body {
+                        padding: 25px;
+                        background-color: white;
+                        color: black;
+                        font-size: 25px;
+                    }
+
+                    .dark-mode {
+                        background-color: black;
+                        color: white;
+                    }
+                </style>
+            </head>
+
+            <body>
+
+                <h2>Toggle Dark/Light Mode</h2>
+                <p>Click the button to toggle between dark and light mode for this page.</p>
+
+                <button onclick="myFunction()">Toggle dark mode</button>
+
+                <script>
+                    function myFunction() {
+                        var element = document.body;
+                        element.classList.toggle("dark-mode");
+                    }
+                </script>
+
+            </body>
+
+            </html>
+
+
+        </xmp>
+
+
+        <p1><a href="index.html">Return to Table of Contents...</a></p1>
+
+        <div id="foot">
+            <footer>
+                <div>Author: Will Madison</div>
+                <div>Contact: madisowo@dukes.jmu.edu</div>
+            </footer>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
