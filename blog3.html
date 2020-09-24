@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    body {
+        background-color: rgb(180, 255, 255);
+        margin: 0;
+    }
+
+    #root {
+        font-size: 2em;
+        font-family: sans-serif;
+        background-color: white;
+        width: 960px;
+        min-height: 100vh;
+        margin: 0 auto;
+        padding: 10px;
+        box-shadow: 0 0 20px gray;
+        box-sizing: border-box;
+    }
+
+    h1 {
+        border-top: 5px solid rgb(207, 26, 26);
+        border-bottom: 5px solid rgb(207, 26, 26);
+        padding-bottom: 15px;
+        padding-top: 15px;
+        font-family: 'Acme', sans-serif;
+        ;
+    }
+
+    p {
+        font-family: 'Times New Roman', Times, serif;
+        margin: 15px;
+    }
+
+    p1 {
+        display: block;
+        padding: 15px;
+        text-align: center;
+        font-size: .8em;
+    }
+
+    form {
+        padding: 10px;
+    }
+
+    footer {
+        text-align: center;
+        font-size: 16px;
+        bottom: 0px;
+        padding: 5px;
+    }
+
+    xmp {
+        font-size: 16px;
+    }
+
+    #foot {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+</style>
+<script>
+    function multiplyBy() {
+        num1 = document.getElementById("firstNumber").value;
+        num2 = document.getElementById("secondNumber").value;
+        document.getElementById("result").innerHTML = num1 * num2;
+    }
+
+    function divideBy() {
+        num1 = document.getElementById("firstNumber").value;
+        num2 = document.getElementById("secondNumber").value;
+        document.getElementById("result").innerHTML = num1 / num2;
+    }
+</script>
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+    <title> 347 Blog 1</title>
+</head>
+
+<body>
+    <div id="root">
+        <h1>
+            <center>
+                Blog 1
+            </center>
+        </h1>
+        <h2>JavaScript in Web Development 9/11/20</h2>
+            <p>
+                One thing that I have always been curious of is how to implement "code" into a website. HTML and CSS are
+                different types of coding then what we Computer Science students are used to referring to. While
+                JavaScript is a way that we can get some simpler code into a website, it doesn't appear to have the same
+                levels of depth that a standard Java program would have (at least from my limited research). To a
+                complete JavaScript beginner like me, <a
+                    href="https://www.w3resource.com/javascript-exercises/javascript-basic-exercise-10.php"
+                    target="_blank">this website</a> gave a good introduction on how to implement JavaScript into an
+                HTML file.
+            </p>
+
+            <form>
+                1st Number : <input type="text" id="firstNumber" /><br>
+                2nd Number: <input type="text" id="secondNumber" /><br>
+                <input type="button" onClick="multiplyBy()" Value="Multiply" />
+                <input type="button" onClick="divideBy()" Value="Divide" />
+            </form>
+            <p>The Result is : <br>
+                <span id="result"></span>
+            </p>
+
+            <h5>HTML Code:</h5>
+            <xmp>
+                <!DOCTYPE html>
+                <html>
+
+                <head>
+                    <meta charset=utf-8 />
+                    <title>JavaScript program to calculate multiplication and
+                        division of two numbers </title>
+                    <style type="text/css">
+                        body {
+                            margin: 30px;
+                        }
+                    </style>
+                </head>
+
+                <body>
+                    <form>
+                        1st Number : <input type="text" id="firstNumber" /><br>
+                        2nd Number: <input type="text" id="secondNumber" /><br>
+                        <input type="button" onClick="multiplyBy()" Value="Multiply" />
+                        <input type="button" onClick="divideBy()" Value="Divide" />
+                    </form>
+                    <p>The Result is : <br>
+                        <span id="result"></span>
+                    </p>
+                </body>
+
+                </html>
+            </xmp>
+
+            <h5>JavaScript Code:</h5>
+            <xmp>
+                function multiplyBy() {
+                    num1 = document.getElementById("firstNumber").value;
+                    num2 = document.getElementById("secondNumber").value;
+                    document.getElementById("result").innerHTML = num1 * num2;
+                }
+
+                function divideBy() {
+                    num1 = document.getElementById("firstNumber").value;
+                    num2 = document.getElementById("secondNumber").value;
+                    document.getElementById("result").innerHTML = num1 / num2;
+                }
+            </xmp>
+
+            <p>
+                Implementing JavaScript was similar to using CSS inside the &lt style &gt tag but inside of a &lt script
+                &gt tag. Like every other coding language I have learned, JavaScript does things a little differently,
+                and will likely cause me to need to Google everything I do while using it for some time.
+            </p>
+            <p>
+                Another common name that came up when researching the topic of putting Java programs in a webpage is a
+                Java Applet. It seemed like a lot to take in, but I would love to learn more about this topic in the
+                future. Java is my most comfortable language and this would help allow me to make some personal projects
+                a bit easier. An idea that I have had for a while and would like to make is a "Mafia" party game narrator. 
+                This would require a website that connects multiple people to a single program while taking inputs and sending
+                outputs, which feels very difficult with my current knowledge.
+            </p>
+
+            <p1><a href="index.html">Return to Table of Contents...</a></p1>
+
+            <div id="foot">
+                <footer>
+                    <div>Author: Will Madison</div>
+                    <div>Contact: madisowo@dukes.jmu.edu</div>
+                </footer>
+            </div>
+    </div>
+
+
+</body>
+
+</html>
