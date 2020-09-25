@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <style>
+    h2 {
+        display: flex;
+        flex-direction: row;
+        flex-grow: 0;
+        align-content: space-between;
+    }
+
+    #title {
+        flex-grow: 9;
+    }
+
+    #date {
+        flex-grow: 1;
+    }
+
     body {
         background-color: rgb(180, 255, 255);
         margin: 0;
@@ -60,124 +75,113 @@
         text-align: center;
     }
 </style>
-<script>
-    function multiplyBy() {
-        num1 = document.getElementById("firstNumber").value;
-        num2 = document.getElementById("secondNumber").value;
-        document.getElementById("result").innerHTML = num1 * num2;
-    }
-
-    function divideBy() {
-        num1 = document.getElementById("firstNumber").value;
-        num2 = document.getElementById("secondNumber").value;
-        document.getElementById("result").innerHTML = num1 / num2;
-    }
-</script>
 
 <head>
     <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
-    <title> 347 Blog 1</title>
+    <title> 347 Blog 3</title>
 </head>
 
-<body>
+<body onload='checkHistory("recentPageViews")''>
     <div id="root">
         <h1>
             <center>
-                Blog 1
+                Blog 3
             </center>
         </h1>
-        <h2>JavaScript in Web Development 9/11/20</h2>
-            <p>
-                One thing that I have always been curious of is how to implement "code" into a website. HTML and CSS are
-                different types of coding then what we Computer Science students are used to referring to. While
-                JavaScript is a way that we can get some simpler code into a website, it doesn't appear to have the same
-                levels of depth that a standard Java program would have (at least from my limited research). To a
-                complete JavaScript beginner like me, <a
-                    href="https://www.w3resource.com/javascript-exercises/javascript-basic-exercise-10.php"
-                    target="_blank">this website</a> gave a good introduction on how to implement JavaScript into an
-                HTML file.
-            </p>
+        <h2>
+            <div id="title">Recently Visited Pages</div>
+            <div id="date">9/25/20</div>
+        </h2>
 
-            <form>
-                1st Number : <input type="text" id="firstNumber" /><br>
-                2nd Number: <input type="text" id="secondNumber" /><br>
-                <input type="button" onClick="multiplyBy()" Value="Multiply" />
-                <input type="button" onClick="divideBy()" Value="Divide" />
-            </form>
-            <p>The Result is : <br>
-                <span id="result"></span>
-            </p>
+        <p>
+            For my first project, I am making a wiki-like page for a mobile game. Something that I think is very
+            important to have in these types of websites is a "recently visited" list. This helps with navigation around
+            the site and helps efficiently provide the user with links to what they may want.
+        </p>
 
-            <h5>HTML Code:</h5>
-            <xmp>
-                <!DOCTYPE html>
-                <html>
+        <p>
+            <a
+                    href="http://blog.sodhanalibrary.com/2014/01/recently-visited-page-links-with.html"
+                    target="_blank">This website</a> lays out some JavaScript code that would track the cookies in a user's browser and show the recently visited pages. I messed around with it on this blog page, but this style did not work here. However, this style may work on my project 1.
+        </p>
 
-                <head>
-                    <meta charset=utf-8 />
-                    <title>JavaScript program to calculate multiplication and
-                        division of two numbers </title>
-                    <style type="text/css">
-                        body {
-                            margin: 30px;
+        <p>
+            The demo of this recents tracker can be seen <a
+            href="http://demo.sodhanalibrary.com/rPage.html"
+            target="_blank">here.</a>
+        </p>
+
+        <p>
+            I learned what cookies are and a way that they are used. I'm sure most people have seen the "this website uses cookies, click accept or die" messages on websites. Cookies are used as a way to store information about how a user visited a page in your web browser. The next time you visit the page, it will search your cookies for that website and show you results accordingly.
+        </p>
+
+        <p>
+            Many things JavaScript still don't make a ton of sense that I see online, but it is getting easier as time goes on. I tend to understand the typical java code parts but get confused once some HTML/CSS syntax come into the mix. 
+        </p>
+
+
+        <h5>Code:</h5>
+        <xmp>
+            function setCookie(cname, cvalue, exdays) {
+                var d = new Date();
+                d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+                var expires = "expires=" + d.toGMTString();
+                document.cookie = cname + '=' + cvalue + ';path="/";' + expires;
+            }
+
+            function getCookie(cname) {
+                var name = cname + "=";
+                var ca = document.cookie.split(';');
+                for ( var i = 0; i < ca.length; i++) {
+                    var c = ca[i].trim();
+                    if (c.indexOf(name) == 0)
+                        return c.substring(name.length, c.length);
+                }
+                return "";
+            }
+
+            function checkHistory(targetId) {
+                var history = getCookie("history");
+                var htmlContent = '';
+            
+                if (history != "") {
+                    var insert = true;
+                    var sp = history.toString().split(",");
+                    for ( var i = sp.length - 1; i >= 0; i--) {
+                        htmlContent += '<a style="color: white;" class="demo-pricing demo-pricing-1"  href="'
+                                + sp[i]
+                                + '">'
+                                + sp[i].substring(sp[i].lastIndexOf('/') + 1) + '</a><br>';
+                        if (sp[i] == document.URL) {
+                            insert = false;
                         }
-                    </style>
-                </head>
-
-                <body>
-                    <form>
-                        1st Number : <input type="text" id="firstNumber" /><br>
-                        2nd Number: <input type="text" id="secondNumber" /><br>
-                        <input type="button" onClick="multiplyBy()" Value="Multiply" />
-                        <input type="button" onClick="divideBy()" Value="Divide" />
-                    </form>
-                    <p>The Result is : <br>
-                        <span id="result"></span>
-                    </p>
-                </body>
-
-                </html>
-            </xmp>
-
-            <h5>JavaScript Code:</h5>
-            <xmp>
-                function multiplyBy() {
-                    num1 = document.getElementById("firstNumber").value;
-                    num2 = document.getElementById("secondNumber").value;
-                    document.getElementById("result").innerHTML = num1 * num2;
+                        document.getElementById(targetId).innerHTML = htmlContent;
+                    }
+                    if (insert) {
+                        sp.push(document.URL);
+                    }
+                    setCookie("history", sp.toString(), 30);
+                } else {
+                    var stack = new Array();
+                    stack.push(document.URL);
+                    setCookie("history", stack.toString(), 30);
                 }
+            }
 
-                function divideBy() {
-                    num1 = document.getElementById("firstNumber").value;
-                    num2 = document.getElementById("secondNumber").value;
-                    document.getElementById("result").innerHTML = num1 / num2;
-                }
-            </xmp>
 
-            <p>
-                Implementing JavaScript was similar to using CSS inside the &lt style &gt tag but inside of a &lt script
-                &gt tag. Like every other coding language I have learned, JavaScript does things a little differently,
-                and will likely cause me to need to Google everything I do while using it for some time.
-            </p>
-            <p>
-                Another common name that came up when researching the topic of putting Java programs in a webpage is a
-                Java Applet. It seemed like a lot to take in, but I would love to learn more about this topic in the
-                future. Java is my most comfortable language and this would help allow me to make some personal projects
-                a bit easier. An idea that I have had for a while and would like to make is a "Mafia" party game narrator. 
-                This would require a website that connects multiple people to a single program while taking inputs and sending
-                outputs, which feels very difficult with my current knowledge.
-            </p>
+        </xmp>
 
-            <p1><a href="index.html">Return to Table of Contents...</a></p1>
 
-            <div id="foot">
-                <footer>
-                    <div>Author: Will Madison</div>
-                    <div>Contact: madisowo@dukes.jmu.edu</div>
-                </footer>
-            </div>
+        <p1><a href="index.html">Return to Table of Contents...</a></p1>
+
+        <div id="foot">
+            <footer>
+                <div>Author: Will Madison</div>
+                <div>Contact: madisowo@dukes.jmu.edu</div>
+            </footer>
+        </div>
+
     </div>
-
 
 </body>
 
