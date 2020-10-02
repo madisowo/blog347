@@ -114,6 +114,10 @@
         clear: both;
         display: table;
     }
+
+    #searchbar {
+        margin-left: 10px;
+    }
 </style>
 
 <head>
@@ -156,8 +160,10 @@
         After reading through the w3 tutorial that they had on PHP, I wouldn't say that I understand it much better and decided to look into similar search features. I found the following search bar on <a href="https://stackoverflow.com/questions/5691678/how-to-get-the-value-of-a-html-input-and-preform-a-google-search" target="_blank">stack overflow</a> that takes the user input and searches Google with it. Hey, if worst comes to worst, Google probably has the answer they were looking for.
     </p>
 
-    <input type="text" id="search" />
-    <input type="button" id="click" value="Search Google!" />
+    <div id="searchbar">
+        <input type="text" id="search" />
+        <input type="button" id="click" value="Search Google!" />
+    </div>
 
     <script>
         document.getElementById('click').onclick=function() {
