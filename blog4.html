@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    h2 {
+        display: flex;
+        flex-direction: row;
+        flex-grow: 0;
+        padding-left: 10px;
+        align-content: space-between;
+    }
+
+    #title {
+        flex-grow: 40;
+    }
+
+    #date {
+        flex-grow: 1;
+    }
+
+    body {
+        background-color: rgb(180, 255, 255);
+        margin: 0;
+    }
+
+    #root {
+        font-size: 2em;
+        font-family: sans-serif;
+        background-color: white;
+        width: 960px;
+        min-height: 100vh;
+        margin: 0 auto;
+        padding: 10px;
+        box-shadow: 0 0 20px gray;
+        box-sizing: border-box;
+    }
+
+    h1 {
+        border-top: 5px solid rgb(207, 26, 26);
+        border-bottom: 5px solid rgb(207, 26, 26);
+        padding-bottom: 15px;
+        padding-top: 15px;
+        font-family: 'Acme', sans-serif;
+        ;
+    }
+
+    p {
+        font-family: 'Times New Roman', Times, serif;
+        margin: 15px;
+    }
+
+    p1 {
+        display: block;
+        padding: 15px;
+        text-align: center;
+        font-size: .8em;
+    }
+
+    form {
+        padding: 10px;
+    }
+
+    footer {
+        text-align: center;
+        font-size: 16px;
+        bottom: 0px;
+        padding: 5px;
+    }
+
+    xmp {
+        font-size: 16px;
+    }
+
+    h5 {
+        padding-left: 10px;
+    }
+
+    #foot {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    form.example input[type=text] {
+        padding: 10px;
+        font-size: 17px;
+        border: 1px solid grey;
+        float: left;
+        width: 80%;
+        background: #f1f1f1;
+    }
+
+    form.example button {
+        float: left;
+        width: 20%;
+        padding: 10px;
+        background: #2196F3;
+        color: white;
+        font-size: 17px;
+        border: 1px solid grey;
+        border-left: none;
+        cursor: pointer;
+    }
+
+    form.example button:hover {
+        background: #0b7dda;
+    }
+
+    form.example::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+</style>
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+    <title> 347 Blog 4</title>
+</head>
+
+<div id="root">
+    <h1>
+        <center>
+            Blog 4
+        </center>
+    </h1>
+    <h2>
+        <div id="title">Search Bars</div>
+        <div id="date">10/1/20</div>
+    </h2>
+
+    <p>
+        Search bars are an essential part of any website. It lets a user find a page quickly. It may also be easier than
+        the user trying to figure out how to navigate to the desired page. With my project being a game wiki, this is a
+        very valuable tool to help users navigate around.
+    </p>
+
+    <p>
+        <a href="https://www.w3schools.com/howto/howto_css_search_button.asp" target="_blank">This article</a>
+        has a nice tutorial on how to get a designed and visually pleasing search bar button into your website. Sadly,
+        it does not work without also adding PHP, which is another factor of web design that I am unfamiliar with.
+        Without PHP, it will give you a file not found exception because the PHP file does not exist.
+    </p>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <form class="example" action="https://www.google.com/search" method="get" style="margin:auto;max-width:300px">
+        <input type="text" placeholder="Search.." name="search2">
+        <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+
+    <p>
+        After reading through the w3 tutorial that they had on PHP, I wouldn't say that I understand it much better and decided to look into similar search features. I found the following search bar on <a href="https://stackoverflow.com/questions/5691678/how-to-get-the-value-of-a-html-input-and-preform-a-google-search" target="_blank">stack overflow</a> that takes the user input and searches Google with it. Hey, if worst comes to worst, Google probably has the answer they were looking for.
+    </p>
+
+    <input type="text" id="search" />
+    <input type="button" id="click" value="Search Google!" />
+
+    <script>
+        document.getElementById('click').onclick=function() {
+            var box=document.getElementById('search');
+            window.location.href='http://www.google.com/search?q='+escape(box.value);
+        }
+    </script>
+
+    <h5>Code 1:</h5>
+    <xmp>
+        <style>
+            /* Style the search field */
+            form.example input[type=text] {
+                padding: 10px;
+                font-size: 17px;
+                border: 1px solid grey;
+                float: left;
+                width: 80%;
+                background: #f1f1f1;
+            }
+
+            /* Style the submit button */
+            form.example button {
+                float: left;
+                width: 20%;
+                padding: 10px;
+                background: #2196F3;
+                color: white;
+                font-size: 17px;
+                border: 1px solid grey;
+                border-left: none;
+                /* Prevent double borders */
+                cursor: pointer;
+            }
+
+            form.example button:hover {
+                background: #0b7dda;
+            }
+
+            /* Clear floats */
+            form.example::after {
+                content: "";
+                clear: both;
+                display: table;
+            }
+        </style>
+
+        <!-- Load icon library -->
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!-- The form -->
+        <form class="example" action="action_page.php">
+            <input type="text" placeholder="Search.." name="search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+
+    </xmp>
+
+    <h5>Code 2:</h5>
+    <xmp>
+        <input type="text" id="search" />
+        <input type="button" id="click" value="Search Google!" />
+    
+        <script>
+            document.getElementById('click').onclick=function() {
+                var box=document.getElementById('search');
+                window.location.href='http://www.google.com/search?q='+escape(box.value);
+            }
+        </script>
+    </xmp>
+
+    <p1><a href="index.html">Return to Table of Contents...</a></p1>
+
+    <div id="foot">
+        <footer>
+            <div>Author: Will Madison</div>
+            <div>Contact: madisowo@dukes.jmu.edu</div>
+        </footer>
+    </div>
+
+</div>
+
+</body>
+
+</html>
