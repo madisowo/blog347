@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    h2 {
+        display: flex;
+        flex-direction: row;
+        flex-grow: 0;
+        padding-left: 10px;
+        align-content: space-between;
+    }
+
+    #title {
+        flex-grow: 40;
+    }
+
+    #date {
+        flex-grow: 1;
+    }
+
+    body {
+        background-color: rgb(180, 255, 255);
+        margin: 0;
+    }
+
+    #root {
+        font-size: 2em;
+        font-family: sans-serif;
+        background-color: white;
+        width: 960px;
+        min-height: 100vh;
+        margin: 0 auto;
+        padding: 10px;
+        box-shadow: 0 0 20px gray;
+        box-sizing: border-box;
+    }
+
+    h1 {
+        border-top: 5px solid rgb(207, 26, 26);
+        border-bottom: 5px solid rgb(207, 26, 26);
+        padding-bottom: 15px;
+        padding-top: 15px;
+        font-family: 'Acme', sans-serif;
+        ;
+    }
+
+    p {
+        font-family: 'Times New Roman', Times, serif;
+        margin: 15px;
+    }
+
+    p1 {
+        display: block;
+        padding: 15px;
+        text-align: center;
+        font-size: .8em;
+    }
+
+    footer {
+        text-align: center;
+        font-size: 16px;
+        bottom: 0px;
+        padding: 5px;
+    }
+
+    xmp {
+        font-size: 16px;
+    }
+
+    h5 {
+        padding-left: 10px;
+    }
+
+    #foot {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+
+
+
+    #one {
+        display: none;
+    }
+
+    #two {
+        display: none;
+    }
+
+    #three {
+        display: none;
+    }
+
+    #a {
+        display: none;
+    }
+
+    #b {
+        display: none;
+    }
+
+    #c {
+        display: none;
+    }
+
+    #select {
+        width: 90px;
+        font-size: 1em;
+        margin-left: 10px;
+        margin-top: 25px;
+    }
+
+</style>
+
+<script>
+    function hide(sel) {
+        document.getElementById("whole").style.display = "none";
+        document.getElementById("a").style.display = "none";
+        document.getElementById("b").style.display = "none";
+        document.getElementById("c").style.display = "none";
+        document.getElementById("one").style.display = "none";
+        document.getElementById("two").style.display = "none";
+        document.getElementById("three").style.display = "none";
+        document.getElementById(sel[sel.selectedIndex].value).style.display = "block";
+    }
+</script>
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+    <title> 347 Blog 5</title>
+</head>
+
+<div id="root">
+    <h1>
+        <center>
+            Blog 5
+        </center>
+    </h1>
+    <h2>
+        <div id="title">Sorting Attributes</div>
+        <div id="date">10/8/20</div>
+    </h2>
+
+    <p>
+        For this week's blog, I wanted to explore types of sorting methods. Google was not my friend for finding resources this time around, only providing ways to sort lists alphabetically or numerically. Eventually I gave up my search and decided I could do this myself (with the help of StackOverflow of course).
+    </p>
+
+    <p>
+        After trying a few different things, I came to the conclusion that sorting in JavaScript sucks. This led me to my end idea of making lots of different lists and only displaying one at a time. I did this with the help of a few StackOverflow threads (<a href="https://stackoverflow.com/questions/16015933/how-can-i-show-a-hidden-div-when-a-select-option-is-selected" target="_blank">one</a>, <a href="https://stackoverflow.com/questions/1085801/get-selected-value-in-dropdown-list-using-javascript" target="_blank">two</a>).
+    </p>
+
+    <p>
+        These threads helped provide me with a basis moving forward of how to hide different div objects using JavaScript and how to call a JS method with a "select" element. The next problem came with the execution of this. How do I get the correct list to show? To keep it simple, the single JS method hides every list before setting the selected element to show. This was accomplished by getting the value of the current item and using that to set the correct list to show.
+    </p>
+
+    <p>
+        The list is selected with a dropdown menu. You can sort based of different attributes; "A" will show you only items with an "A" in it and so on.
+    </p>
+
+    <select id="select" name="sort" onchange="hide(this);">
+        <option value="whole">All</option>
+        <option value="a">A</option>
+        <option value="b">B</option>
+        <option value="c">C</option>
+        <option value="one">1</option>
+        <option value="two">2</option>
+        <option value="three">3</option>
+    </select>
+
+    <div id="whole">
+        <ul>
+            <li>A1</li>
+            <li>A2</li>
+            <li>A3</li>
+            <li>B1</li>
+            <li>B2</li>
+            <li>B3</li>
+            <li>C1</li>
+            <li>C2</li>
+            <li>C3</li>
+        </ul>
+    </div>
+
+    <div id="one">
+        <ul>
+            <li>A1</li>
+            <li>B1</li>
+            <li>C1</li>
+        </ul>
+    </div>
+
+    <div id="two">
+        <ul>
+            <li>A2</li>
+            <li>B2</li>
+            <li>C2</li>
+        </ul>
+    </div>
+
+    <div id="three">
+        <ul>
+            <li>A3</li>
+            <li>B3</li>
+            <li>C3</li>
+        </ul>
+    </div>
+
+    <div id="a">
+        <ul>
+            <li>A1</li>
+            <li>A2</li>
+            <li>A3</li>
+        </ul>
+    </div>
+
+    <div id="b">
+        <ul>
+            <li>B1</li>
+            <li>B2</li>
+            <li>B3</li>
+        </ul>
+    </div>
+
+    <div id="c">
+        <ul>
+            <li>C1</li>
+            <li>C2</li>
+            <li>C3</li>
+        </ul>
+    </div>
+
+    <h5>Code:</h5>
+    <xmp>
+        <script>
+            function hide(sel) {
+                document.getElementById("whole").style.display = "none";
+                document.getElementById("a").style.display = "none";
+                document.getElementById("b").style.display = "none";
+                document.getElementById("c").style.display = "none";
+                document.getElementById("one").style.display = "none";
+                document.getElementById("two").style.display = "none";
+                document.getElementById("three").style.display = "none";
+                document.getElementById(sel[sel.selectedIndex].value).style.display = "block";
+            }
+        </script>
+
+        // The HTML is just different unordered lists
+
+        // ~ <select id="select" name="sort" onchange="hide(this);"></select>
+    </xmp>
+
+    <p1><a href="index.html">Return to Table of Contents...</a></p1>
+
+    <div id="foot">
+        <footer>
+            <div>Author: Will Madison</div>
+            <div>Contact: madisowo@dukes.jmu.edu</div>
+        </footer>
+    </div>
+
+</div>
+
+</body>
+
+</html>
