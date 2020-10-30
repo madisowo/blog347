@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    h2 {
+        display: flex;
+        flex-direction: row;
+        flex-grow: 0;
+        padding-left: 10px;
+        align-content: space-between;
+    }
+
+    #title {
+        flex-grow: 40;
+    }
+
+    #date {
+        flex-grow: 1;
+    }
+
+    body {
+        background-color: rgb(180, 255, 255);
+        margin: 0;
+    }
+
+    #root {
+        font-size: 2em;
+        font-family: sans-serif;
+        background-color: white;
+        width: 960px;
+        min-height: 100vh;
+        margin: 0 auto;
+        padding: 10px;
+        box-shadow: 0 0 20px gray;
+        box-sizing: border-box;
+    }
+
+    h1 {
+        border-top: 5px solid rgb(207, 26, 26);
+        border-bottom: 5px solid rgb(207, 26, 26);
+        padding-bottom: 15px;
+        padding-top: 15px;
+        font-family: 'Acme', sans-serif;
+        ;
+    }
+
+    p {
+        font-family: 'Times New Roman', Times, serif;
+        margin: 15px;
+        margin-bottom: 35px;
+    }
+
+    p1 {
+        display: block;
+        padding: 15px;
+        text-align: center;
+        font-size: .8em;
+    }
+
+    footer {
+        text-align: center;
+        font-size: 16px;
+        bottom: 0px;
+        padding: 5px;
+    }
+
+    xmp {
+        font-size: 16px;
+    }
+
+    h5 {
+        padding-left: 10px;
+    }
+
+    #foot {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+</style>
+
+<script>
+    function hide(sel) {
+        document.getElementById("whole").style.display = "none";
+        document.getElementById("a").style.display = "none";
+        document.getElementById("b").style.display = "none";
+        document.getElementById("c").style.display = "none";
+        document.getElementById("one").style.display = "none";
+        document.getElementById("two").style.display = "none";
+        document.getElementById("three").style.display = "none";
+        document.getElementById(sel[sel.selectedIndex].value).style.display = "block";
+    }
+</script>
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+    <title> 347 Blog 6</title>
+</head>
+
+<div id="root">
+    <h1>
+        <center>
+            Blog 6
+        </center>
+    </h1>
+    <h2>
+        <div id="title">React Review and Comprehension</div>
+        <div id="date">10/29/20</div>
+    </h2>
+
+    <p>
+        After a week of difficult labs after not meeting for over a week, I wanted to take this blog post to continue
+        to learn about the basics of our recent topics. This will help me understand the fundamental concepts behind
+        what we are doing so that I don't stay confused as we get further in.
+    </p>
+    
+    <p>
+        They feel difficult because they essentially do the same thing that 
+        we have learned so far this semester, but you have to do it in a completely different way. With practice, this 
+        will likely become second nature. Plus, React seems like it is better in many cirumstances.
+    </p>
+
+    <p>
+        "One of the most important aspects of React is the fact that you can create components, which are like custome,
+        reusable HTML elements, to quickly and efficiently build user interfaces" (<a
+            href="https://www.taniarascia.com/getting-started-with-react/" target="_blank">taniarascia</a>).
+    </p>
+
+    <p>From my readings on the differences between React and standard JavaScript, React creates the HTML while JS 
+        defines behavior of already created HTML files. React is also easier to update because it is in control of the 
+        HTML. JavaScript needs to go in to remove and add elements. React is also easier to maintain than the standard 
+        way we have approached web design thus far. The expansiveness of it is faster and easier.
+    </p>
+
+
+    <p>
+        The code below is from <a
+        href="https://www.w3schools.com/react/react_forms.asp" target="_blank">w3schools on react forms</a> and has an 
+        example of it running <a href="https://www.w3schools.com/react/showreact.asp?filename=demo2_react_forms_handling"
+        target="_blank">here.</a> This code prompts the user to input their name and displays it on screen when they do so.
+        The hHTML file is basically empty and the building of it comes from the JS file with React. It creates the 'username'
+        object separate the HTML, making this code very easy to change around as needed.
+    </p>
+
+
+
+
+    <h5>Code:</h5>
+    <xmp>
+        // index.js
+
+        import React from 'react';
+        import ReactDOM from 'react-dom';
+        
+        class MyForm extends React.Component {
+          constructor(props) {
+            super(props);
+            this.state = { username: '' };
+          }
+          myChangeHandler = (event) => {
+            this.setState({username: event.target.value});
+          }
+          render() {
+            return (
+              <form>
+              <h1>Hello {this.state.username}</h1>
+              <p>Enter your name:</p>
+              <input
+                type='text'
+                onChange={this.myChangeHandler}
+              />
+              </form>
+            );
+          }
+        }
+        
+        ReactDOM.render(<MyForm />, document.getElementById('root'));
+
+
+
+
+
+        //index.html
+
+        <!DOCTYPE html>
+        <html lang="en">
+          <head>
+            <meta charset="utf-8" />
+            <meta name="viewport"
+              content="width=device-width, initial-scale=1" />
+            <title>React App</title>
+          </head>
+          <body>
+        
+            <div id="root"></div>
+        
+          </body>
+        </html>
+
+    </xmp>
+
+    <p1><a href="index.html">Return to Table of Contents...</a></p1>
+
+    <div id="foot">
+        <footer>
+            <div>Author: Will Madison</div>
+            <div>Contact: madisowo@dukes.jmu.edu</div>
+        </footer>
+    </div>
+
+</div>
+
+</body>
+
+</html>
