@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    h2 {
+        display: flex;
+        flex-direction: row;
+        flex-grow: 0;
+        padding-left: 10px;
+        align-content: space-between;
+    }
+
+    #title {
+        flex-grow: 40;
+    }
+
+    #date {
+        flex-grow: 1;
+    }
+
+    body {
+        background-color: rgb(180, 255, 255);
+        margin: 0;
+    }
+
+    #root {
+        font-size: 2em;
+        font-family: sans-serif;
+        background-color: white;
+        width: 960px;
+        min-height: 100vh;
+        margin: 0 auto;
+        padding: 10px;
+        box-shadow: 0 0 20px gray;
+        box-sizing: border-box;
+    }
+
+    h1 {
+        border-top: 5px solid rgb(207, 26, 26);
+        border-bottom: 5px solid rgb(207, 26, 26);
+        padding-bottom: 15px;
+        padding-top: 15px;
+        font-family: 'Acme', sans-serif;
+        ;
+    }
+
+    p {
+        font-family: 'Times New Roman', Times, serif;
+        margin: 15px;
+        margin-bottom: 35px;
+    }
+
+    p1 {
+        display: block;
+        padding: 15px;
+        text-align: center;
+        font-size: .8em;
+    }
+
+    footer {
+        text-align: center;
+        font-size: 16px;
+        bottom: 0px;
+        padding: 5px;
+    }
+
+    xmp {
+        font-size: 16px;
+    }
+
+    h5 {
+        padding-left: 10px;
+    }
+
+    #foot {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+</style>
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+    <title> 347 Blog 7</title>
+</head>
+
+<div id="root">
+    <h1>
+        <center>
+            Blog 7
+        </center>
+    </h1>
+    <h2>
+        <div id="title">Charts and Visuals</div>
+        <div id="date">11/5/20</div>
+    </h2>
+
+    <p>
+        For Project 2, my partner and I are making a budgeting/spending tracker app. It will track 
+        purchases and classify them based on a category and a date. For a good user interface, we 
+        need visuals to represent our data.
+    </p>
+    
+    <p>
+        As always, w3schools comes in to save the day with their tutorial on <a href=
+        "https://www.w3schools.com/howto/howto_google_charts.asp" target="_blank">pie charts</a>. 
+        It uses a Google API to create the chart and is extremely simple to use. You create an array 
+        of data and the rest is done for you. It has good visuals, splits up each category, draws a 
+        proportional chart, and shows the percentages of each section. It also includes a color key 
+        and hover details.
+    </p>
+
+    <p>
+        It has a bunch of defaults but also has customization options. For this pie chart, I chose each 
+        color manually. It also has other random customizations like being able to make it 3d. By default,
+        it displays percentages instead of numbers, which we can also change by adding more to the options
+        variable.
+    </p>
+
+    <div id="piechart"></div>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+        
+        function drawChart() {
+          var data = google.visualization.arrayToDataTable([
+          ['Category', 'Cost'],
+          ['Utilities', 80],
+          ['Food', 120],
+          ['Entertainment', 35],
+          ['Transportation', 30],
+          ['Essentials', 30]
+        ]);
+        
+          var options = {
+              'title':'Spending this month', 
+              'width': 900, 
+              'height': 550, 
+              'colors':  ['#6495ed', '#FF5733', '#0cE848', '#980CE8', '#E8E10C'],
+              'pieSliceText': "value",
+          };
+        
+          var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+          chart.draw(data, options);
+        }
+    </script>
+
+    <h5>Code:</h5>
+    <xmp>
+        <div id="piechart"></div>
+
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+        <script type="text/javascript">
+            google.charts.load('current', {'packages':['corechart']});
+            google.charts.setOnLoadCallback(drawChart);
+            
+            function drawChart() {
+              var data = google.visualization.arrayToDataTable([
+              ['Category', 'Cost'],
+              ['Utilities', 80],
+              ['Food', 120],
+              ['Entertainment', 35],
+              ['Transportation', 30],
+              ['Essentials', 30]
+            ]);
+            
+              var options = {
+                  'title':'Spending this month', 
+                  'width': 900, 
+                  'height': 550, 
+                  'colors':  ['#6495ed', '#FF5733', '#0cE848', '#980CE8', '#E8E10C'],
+                  'pieSliceText': "value",
+              };
+            
+              var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+              chart.draw(data, options);
+            }
+        </script>
+    </xmp>
+
+    <p1><a href="index.html">Return to Table of Contents...</a></p1>
+
+    <div id="foot">
+        <footer>
+            <div>Author: Will Madison</div>
+            <div>Contact: madisowo@dukes.jmu.edu</div>
+        </footer>
+    </div>
+
+</div>
+
+</body>
+
+</html>
