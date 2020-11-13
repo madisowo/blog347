@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    h2 {
+        display: flex;
+        flex-direction: row;
+        flex-grow: 0;
+        padding-left: 10px;
+        align-content: space-between;
+    }
+
+    #title {
+        flex-grow: 40;
+    }
+
+    #date {
+        flex-grow: 1;
+    }
+
+    body {
+        background-color: rgb(180, 255, 255);
+        margin: 0;
+    }
+
+    #root {
+        font-size: 2em;
+        font-family: sans-serif;
+        background-color: white;
+        width: 960px;
+        min-height: 100vh;
+        margin: 0 auto;
+        padding: 10px;
+        box-shadow: 0 0 20px gray;
+        box-sizing: border-box;
+    }
+
+    h1 {
+        border-top: 5px solid rgb(207, 26, 26);
+        border-bottom: 5px solid rgb(207, 26, 26);
+        padding-bottom: 15px;
+        padding-top: 15px;
+        font-family: 'Acme', sans-serif;
+        ;
+    }
+
+    p {
+        font-family: 'Times New Roman', Times, serif;
+        margin: 15px;
+        margin-bottom: 35px;
+    }
+
+    p1 {
+        display: block;
+        padding: 15px;
+        text-align: center;
+        font-size: .8em;
+    }
+
+    footer {
+        text-align: center;
+        font-size: 16px;
+        bottom: 0px;
+        padding: 5px;
+    }
+
+    xmp {
+        font-size: 16px;
+    }
+
+    h5 {
+        padding-left: 10px;
+    }
+
+    #foot {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+
+    audio {
+        margin-top: 30px;
+    }
+
+</style>
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+    <title> 347 Blog 8</title>
+</head>
+
+<div id="root">
+    <h1>
+        <center>
+            Blog 8
+        </center>
+    </h1>
+    <h2>
+        <div id="title">Media Players</div>
+        <div id="date">11/12/20</div>
+    </h2>
+
+    <p1>
+        Blog Audio Book:
+        (Audio may be loud by default. Turn it down before listening.)
+        <audio controls>
+            <source src="media/audioTest.mp3" type="audio/mpeg" alt="Audio reading of blog text">
+        </audio>
+    </p1>
+
+    <p>
+        The lab from today for finding various artists and albums made me realize that I have 
+        never tried to implement audio or video into a webpage. If we gave the objects in the 
+        lab a file name, we could implement a system that would retrieve the requested song or 
+        album to the user that they would then be able to listen to. The same would apply to 
+        videos. 
+    </p>
+
+    <p>This made me think of what platforms online use a system that may be similar to this. 
+        <a href="https://www.clariontech.com/blog/top-10-websites-built-on-react.js?hs_amp=true" 
+        target="_blank">This article</a> contains a list of many popular websites that are built 
+        with React. Facebook, Instagram, and Netflix are the biggest household names on the list 
+        and I wonder if their search bars are made in a similar fashion to today's lab. Also, many 
+        of these websites will use very different media players than the default HTML player.
+    </p>
+
+    <p>
+        Thankfully, media players can be very simple in HTML. There are already tools to include files
+        such as mp3 and mp4 in a playable fashion on a webpage with the audio and video tags. They are 
+        also super easy to use. Both audio and video formats follow a very similar style and just need 
+        an appropriate file format to read from. 
+    </p>
+
+    
+    <p>
+        <video width="600" controls>
+            <source src="media/24.mp4" type="video/mp4" alt="Spongebob 24 video">
+            Your browser does not support the video tag.
+        </video>
+    </p>
+
+    <p>
+        Text to speech from <a href="https://ttsmp3.com/">ttsmp3.com</a>. <br>
+        Video from <a href="https://www.youtube.com/watch?v=wZGedBzcYas">YouTube</a>.
+    </p>
+
+
+    <h5>Code:</h5>
+    <xmp>
+        <audio controls>
+            <source src="media/audioTest.mp3" type="audio/mpeg">
+        </audio>
+
+        <video width="600" controls>
+            <source src="media/24.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </xmp>
+
+    <p1><a href="index.html">Return to Table of Contents...</a></p1>
+
+    <div id="foot">
+        <footer>
+            <div>Author: Will Madison</div>
+            <div>Contact: madisowo@dukes.jmu.edu</div>
+        </footer>
+    </div>
+
+</div>
+
+</body>
+
+</html>
